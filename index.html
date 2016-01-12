@@ -36,7 +36,7 @@
             <ul class="nav navbar-nav pull-right">
               <li><a href="#presentation">Présentation</a></li>
               <li><a href="#trombinoscope">Trombinoscope</a></li>
-              <li><a href="#partner">Partenaires</a></li>
+              <li><a href="#partners">Partenaires</a></li>
             </ul>
           </div>
         </div>
@@ -58,9 +58,11 @@
 
     <div id="trombinoscope" class="jumbotron">
       <div class="container">
+        <!-- <img src="images/profil.png" alt="Logo profil" class="img-rounded" /> -->
         <h1>
           Trombinoscope
         </h1>
+        <hr>
         <div class="row">
           <h2>
             Formateur
@@ -254,19 +256,50 @@
           </div>
         </div>
         <div class="row" id="nav_pagination_members">
-          <!-- <ul class="pagination">
-           <li><a href="#">&laquo;</a></li>
-           <li class="active"><a href="#">1</a></li>
-           <li><a href="#">2</a></li>
-           <li><a href="#">3</a></li>
-           <li><a href="#">&raquo;</a></li>
-          </ul> -->
         </div>
       </div>
     </div>
 
-    <div id="partner" class="jumbotron">
+    <div id="partners" class="jumbotron">
       <div class="container">
+        <h1>
+          Partenaires
+        </h1>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="partner">
+              <img src="images/dell.png" alt="Logo de Dell" />
+            </div>
+            <h2>
+              Dell
+            </h2>
+            <p>
+              L’idée est de répondre aux problèmes de recrutement des start-up au travers de formations complémentaires proposées à des jeunes des quartiers et des gens en recherche de poste.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="partner">
+              <img src="images/face.png" alt="Logo de FACE Herault" />
+            </div>
+            <h2>
+              FACE Herault
+            </h2>
+            <p>
+              Simplon.co donne la possibilité au plus grand nombre de parler la langue du numérique, afin d'avancer vers les valeurs de l’universalisme et de l’humanisme du numérique.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="partner">
+              <img src="images/poleemploi.png" alt="Logo de Pole Emploi" />
+            </div>
+            <h2>
+              Pôle Emploi
+            </h2>
+            <p>
+              La formation est en adéquation avec les besoins du marché du travail ouvrant la voie à plusieurs métiers du numérique aux demandeurs.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -290,6 +323,10 @@
       var nb_visible_pages = 0;
       // Cuurent page. Default 1
       var current_page = 1;
+
+      // $('body').data().scrollspy.options.offset = -200;
+      // $('body').data()['bs.scrollspy'].options.offset = 200;
+      $('body').data().scrollspy.process();
 
       // When the document is ready
       $(document).ready(function()
