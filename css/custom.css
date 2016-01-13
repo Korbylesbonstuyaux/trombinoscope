@@ -204,8 +204,63 @@ nav button {
 /* FOOTER */
 
 footer {
-  height: 500px;
-  background-color: red;
+  height: 100px;
+  background-color: #ED1651;
 }
 
+#copyright, #madeby {
+  height: 100px;
+  display: inline-block !important;
+  line-height:normal !important;
+}
+
+.v-center {
+  line-height: 100px !important;
+  color: white !important;
+}
+.normal {
+  height: 50px !important;
+  display: inline-block !important;
+  line-height:normal !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
 /* END FOOTER */
+
+/* BACK TO TOP */
+
+#back-to-top {
+  position: fixed;
+  right: 30px;
+  top: 90%;
+}
+
+#back-to-top .my-icons
+{
+  text-align: center;
+  display: inline-block;
+  background-color: Transparent !important;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+#back-to-top button, #back-to-top button:hover, #back-to-top button:active {
+  background-color: Transparent !important;
+  outline: none !important;
+  border: 2px solid black;
+  border-radius: 50% !important;
+  height: 30px !important;
+  width: 30px !important;
+  color: black;
+}
+
+#back-to-top button span {
+  position: absolute;
+  top: 0px;
+  left: 6px;
+}
+
+/* END BACK TO TOP */

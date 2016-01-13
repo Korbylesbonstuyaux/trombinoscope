@@ -1,6 +1,18 @@
+var top_space = 50;
+var nav_height = $(".navbar").height();
+
+$(window).resize(function()
+{
+  nav_height = $(".navbar").height();
+});
+
 $(document).ready(function()
 {
-    var top_space = 50;
+    $("body").scrollspy(
+    {
+    target: ".navbar",
+    offset: nav_height + 1
+    })
 
 		$('#go-top').click(function()
     {
@@ -12,6 +24,6 @@ $(document).ready(function()
     $('.navbar-nav li').click(function()
     {
       var href = $('a', this).attr('href');
-      $('html, body').animate({scrollTop: $(href).offset().top}, 1000);
+      $('html, body').animate({scrollTop: $(href).offset().top - nav_height}, 1000);
 		});
 });
