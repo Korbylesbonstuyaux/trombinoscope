@@ -15,7 +15,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
   </head>
@@ -58,11 +57,32 @@
 
     <div id="trombinoscope" class="jumbotron">
       <div class="container">
-        <!-- <img src="images/profil.png" alt="Logo profil" class="img-rounded" /> -->
+        <div id="preview">
+          <div id="preview-coverflow">
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+            <img class="cover" src="images/unknow.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="trombinoscope" class="jumbotron">
+      <div class="container">
+        <img src="images/profil.png" alt="Logo profil" class="img-rounded" />
         <h1>
           Trombinoscope
         </h1>
-        <hr>
         <div class="row">
           <h2>
             Formateur
@@ -258,7 +278,7 @@
         <div class="row" id="nav_pagination_members">
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div id="partners" class="jumbotron">
       <div class="container">
@@ -336,10 +356,17 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.twbsPagination.min.js"></script>
+    <script src="js/twbs-pagination/jquery.twbsPagination.min.js"></script>
+    <!-- Plugin -->
+		<script src="js/coverflow/jquery.coverflow.js"></script>
+		<!-- Optionals -->
+		<script src="js/coverflow/jquery.interpolate.js"></script>
+		<script src="js/coverflow/jquery.touchSwipe.min.js"></script>
+		<script src="js/coverflow/reflection.js"></script>
     <script>
       // Number visible elements by page
       var show_per_page = 0;
@@ -451,10 +478,40 @@
             last: 'Fin',
             onPageClick: fct_page_click
           });
-
         }
-
       }
+
+      $(function() {
+        // if ($.fn.reflect) {
+        //   $('#preview-coverflow .cover').reflect();	// only possible in very specific situations
+        // }
+
+        $('#preview-coverflow').coverflow({
+          index:			4,
+          density:		2,
+          innerOffset:	100,
+          innerScale:		.7,
+          animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+            if (isVisible) {
+              if (isMiddle) {
+                $(cover).css({
+                  'filter':			'none',
+                  '-webkit-filter':	'none'
+                });
+              } else {
+                var brightness	= 1 + Math.abs(sin),
+                  contrast	= 1 - Math.abs(sin),
+                  filter		= 'contrast('+contrast+') brightness('+brightness+')';
+                $(cover).css({
+                  'filter':			filter,
+                  '-webkit-filter':	filter
+                });
+              }
+            }
+          }
+        });
+      });
+
     </script>
   </body>
 </html>
