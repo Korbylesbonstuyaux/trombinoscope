@@ -15,6 +15,11 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- 3D Coverflow -->
+    <link rel="stylesheet" type="text/css" href="css/3d-coverflow/skin_allsizes_white.css"/>
+		<script type="text/javascript" src="js/3d-coverflow/FWDSimple3DCoverflow.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
   </head>
@@ -57,228 +62,115 @@
 
     <div id="trombinoscope" class="jumbotron">
       <div class="container">
-        <div id="preview">
-          <div id="preview-coverflow">
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-            <img class="cover" src="images/unknow.png"/>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div id="trombinoscope" class="jumbotron">
-      <div class="container">
-        <img src="images/profil.png" alt="Logo profil" class="img-rounded" />
         <h1>
           Trombinoscope
         </h1>
         <div class="row">
-          <h2>
-            Formateur
-          </h2>
-          <div class="col-lg-2 col-lg-offset-5">
-            <div class="member">
-              <div class="row">
-                <div class="photo col-lg-12 col-xs-4">
-                  <img src="images/unknow.png" alt="" class="img-rounded" />
-                </div>
-                <div class="description col-lg-12 col-xs-8">
-                  <p>
-                    DUPONT<br>
-                    Thomas
-                  </p>
-                </div>
-              </div>
+          <!-- div used as a holder for the coverflow -->
+          <div class="col-lg-8 col-lg-offset-2">
+            <div id="members-coverflow">
+              <!-- coverflow data -->
+              <ul id="coverflowData" style="display: none;">
+                <!-- category -->
+                <ul data-cat="Members">
+
+          				<ul>
+          					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"><a href="#partners"></a></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">DROSS Pierre-Anthony</p>
+          						<p class="smallLabel">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+          						<p class="mediaDescriptionText">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
+          					</li>
+          				</ul>
+
+          				<ul>
+          					<li data-type="media" data-url="load/images/2.jpg"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+          						<p class="smallLabel">The coverflow has responsive layout.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+          						<p class="mediaDescriptionText">The coverflow has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+          					</li>
+          				</ul>
+
+          				<ul>
+          					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+          						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+          						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
+          					</li>
+          				</ul>
+
+                  <ul>
+          					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+          						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+          						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
+          					</li>
+          				</ul>
+
+                  <ul>
+          					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+          						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+          						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
+          					</li>
+          				</ul>
+
+                  <ul>
+          					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+          						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+          						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
+          					</li>
+          				</ul>
+
+                  <ul>
+          					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
+          					<li data-thumbnail-path="images/unknow.png" data-thumbnail-width="200" data-thumbnail-height="200"></li>
+          					<li data-thumbnail-text="">
+          						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+          						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
+          					</li>
+          					<li data-info="">
+          						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+          						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
+          					</li>
+          				</ul>
+                </ul>
+              </ul>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <h2>
-            Apprentis
-          </h2>
-          <div id="members">
-            <div class="col-lg-2 col-lg-offset-1 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 1
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 2
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 3
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 4
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 5
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-lg-offset-1 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 6
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 7
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 8
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 9
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 10
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-lg-offset-1 col-xs-12">
-              <div class="member">
-                <div class="row">
-                  <div class="photo col-lg-12 col-xs-4">
-                    <img src="images/unknow.png" alt="" class="img-rounded" />
-                  </div>
-                  <div class="description col-lg-12 col-xs-8">
-                    <p>
-                      TEST<br>
-                      Photo 11
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" id="nav_pagination_members">
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div id="partners" class="jumbotron">
       <div class="container">
@@ -359,14 +251,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="js/smoothscroll.js"></script>
+    <script src="js/my-smoothscroll.js"></script>
     <script src="js/twbs-pagination/jquery.twbsPagination.min.js"></script>
-    <!-- Plugin -->
+    <script src="js/my-coverflow.js"></script>
+    <!-- Plugin
 		<script src="js/coverflow/jquery.coverflow.js"></script>
-		<!-- Optionals -->
+		<!-- Optionals
 		<script src="js/coverflow/jquery.interpolate.js"></script>
 		<script src="js/coverflow/jquery.touchSwipe.min.js"></script>
-		<script src="js/coverflow/reflection.js"></script>
+		<script src="js/coverflow/reflection.js"></script>-->
     <script>
       // Number visible elements by page
       var show_per_page = 0;
@@ -481,36 +374,36 @@
         }
       }
 
-      $(function() {
-        // if ($.fn.reflect) {
-        //   $('#preview-coverflow .cover').reflect();	// only possible in very specific situations
-        // }
-
-        $('#preview-coverflow').coverflow({
-          index:			4,
-          density:		2,
-          innerOffset:	100,
-          innerScale:		.7,
-          animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
-            if (isVisible) {
-              if (isMiddle) {
-                $(cover).css({
-                  'filter':			'none',
-                  '-webkit-filter':	'none'
-                });
-              } else {
-                var brightness	= 1 + Math.abs(sin),
-                  contrast	= 1 - Math.abs(sin),
-                  filter		= 'contrast('+contrast+') brightness('+brightness+')';
-                $(cover).css({
-                  'filter':			filter,
-                  '-webkit-filter':	filter
-                });
-              }
-            }
-          }
-        });
-      });
+      // $(function() {
+      //   // if ($.fn.reflect) {
+      //   //   $('#preview-coverflow .cover').reflect();	// only possible in very specific situations
+      //   // }
+      //
+      //   $('#preview-coverflow').coverflow({
+      //     index:			4,
+      //     density:		2,
+      //     innerOffset:	100,
+      //     innerScale:		.7,
+      //     animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+      //       if (isVisible) {
+      //         if (isMiddle) {
+      //           $(cover).css({
+      //             'filter':			'none',
+      //             '-webkit-filter':	'none'
+      //           });
+      //         } else {
+      //           var brightness	= 1 + Math.abs(sin),
+      //             contrast	= 1 - Math.abs(sin),
+      //             filter		= 'contrast('+contrast+') brightness('+brightness+')';
+      //           $(cover).css({
+      //             'filter':			filter,
+      //             '-webkit-filter':	filter
+      //           });
+      //         }
+      //       }
+      //     }
+      //   });
+      // });
 
     </script>
   </body>

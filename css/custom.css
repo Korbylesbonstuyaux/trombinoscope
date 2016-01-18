@@ -2,31 +2,6 @@
 Magenta : #ED1651 237 22 81
 
 */
-/*TEST*/
-#preview {
-  border:					solid thin silver;
-  padding:				2em;
-  margin:					0 10%;
-  text-align:				center;
-  box-shadow:				0 0 2em silver;
-}
-
-#preview {
-  padding-bottom: 100px;
-}
-preview-coverflow .cover {
-  cursor:		pointer;
-  width:		100px !important;
-  height:		100px !important;
-  box-shadow:	0 0 4em 1em white;
-}
-
-.cover {
-  /*background-color: white !important;*/
-  border: 3px solid black;
-  border-radius: 50%;
-}
-
 /* GLOBAL */
 
 body {
@@ -134,52 +109,24 @@ nav button {
 
 #presentation h1 {
   /*color: black;*/
+  margin-bottom: 50px;
 }
 
 /* END PRESENTATION */
 
 /* TROMBINOSCOPE */
 
-/*#trombinoscope img {
-  height: 100px;
-  width: auto;
-  background-color: white !important;
-  border: 1px solid #ED1651;
-  border-radius: 50px;
-}*/
+#members-coverflow {
+  margin: auto;
+}
 
 #trombinoscope {
   text-align: center;
+  /*background-color: black;*/
 }
 
 #trombinoscope h1, h2 {
   color: #ED1651;
-}
-
-#trombinoscope hr {
-  width: 40%;
-  border: 1px solid #ED1651;
-  /*color: #E74C3C;*/
-}
-
-.member {
-  /*border: 2px solid green;*/
-  margin-bottom: 20px;
-}
-
-.member:hover {
-  background-color: rgba(237, 22, 81, 0.5); !important;
-}
-
-.photo .description {
-}
-
-.photo img {
-  height: 100px;
-  width: auto;
-  background-color: white !important;
-  border: 1px solid black;
-  border-radius: 50px;
 }
 
 #trombinoscope .pagination_members a {
@@ -216,6 +163,10 @@ nav button {
 #partners img {
   width: 100px;
   height: 100px;
+}
+
+#partners h1 {
+  margin-bottom: 50px;
 }
 
 #partners h2 {
@@ -259,6 +210,7 @@ footer {
   position: fixed;
   right: 30px;
   top: 90%;
+  z-index: 9999;
 }
 
 #back-to-top .my-icons
