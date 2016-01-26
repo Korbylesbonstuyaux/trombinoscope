@@ -122,29 +122,16 @@ nav button {
 
 #trombinoscope {
   text-align: center;
-  /*background-color: black;*/
+  background-color: black;
 }
 
 #trombinoscope h1, h2 {
-  color: #ED1651;
+  /*color: #ED1651;*/
+  color: white;
 }
 
-#trombinoscope .pagination_members a {
-  color: #ED1651 !important;
-  border: 0;
-  background: none;
-}
-
-#trombinoscope .pagination_members a:hover {
-  border: 0;
-  background: rgba(237, 22, 81, 0.5);
-  color: white !important;
-}
-
-#trombinoscope .pagination_members .active a {
-  border: 0;
-  background: #ED1651;
-  color: white !important;
+#patterns button {
+  border: none;
 }
 
 /* END TROMBINOSCOPE */
@@ -187,6 +174,10 @@ footer {
   height: 100px;
   display: inline-block !important;
   line-height:normal !important;
+}
+
+#madeby {
+  text-align: right;
 }
 
 .v-center {

@@ -1,4 +1,4 @@
-var coverflow
+var coverflow;
 
 FWDS3DCovUtils.onReady(function()
 {
@@ -11,10 +11,10 @@ FWDS3DCovUtils.onReady(function()
     autoScale:"no",
     coverflowWidth:800,
     coverflowHeight:500,
-    skinPath:"skins/3d-coverflow/skin_white",
+    skinPath:"skins/3d-coverflow/skin_black",
 
     //main settings
-    backgroundColor:"#eee",
+    backgroundColor:"#000",
     backgroundImagePath:"",
     backgroundRepeat:"repeat-x",
     showDisplay2DAlways:"no",
@@ -22,8 +22,8 @@ FWDS3DCovUtils.onReady(function()
     coverflowTopology:"dualsided",
     coverflowXRotation:0,
     coverflowYRotation:0,
-    numberOfThumbnailsToDisplayLeftAndRight:3,
-    infiniteLoop:"yes",
+    numberOfThumbnailsToDisplayLeftAndRight:"all",
+    infiniteLoop:"no",
     rightClickContextMenu:"default",
     fluidWidthZIndex:1000,
 
@@ -67,24 +67,24 @@ FWDS3DCovUtils.onReady(function()
     slideshowTimerColor:"#FFFFFF",
     controlsPosition:"bottom",
     controlsOffset:15,
-    showPrevButton:"yes",
-    showNextButton:"yes",
-    showSlideshowButton:"yes",
-    showScrollbar:"yes",
+    showPrevButton:"no",
+    showNextButton:"no",
+    showSlideshowButton:"no",
+    showScrollbar:"no",
     disableScrollbarOnMobile:"yes",
     enableMouseWheelScroll:"yes",
     scrollbarHandlerWidth:200,
-    scrollbarTextColorNormal:"#000000",
+    scrollbarTextColorNormal:"#FFF",
     scrollbarTextColorSelected:"#FFFFFF",
     addKeyboardSupport:"yes",
 
     //categories settings
-    showCategoriesMenu:"yes",
+    showCategoriesMenu:"no",
     startAtCategory:1,
     categoriesMenuMaxWidth:700,
     categoriesMenuOffset:25,
     categoryColorNormal:"#999999",
-    categoryColorSelected:"#000000",
+    categoryColorSelected:"#FFFFFF",
 
     //lightbox settings
     addLightBoxKeyboardSupport:"yes",
@@ -99,7 +99,7 @@ FWDS3DCovUtils.onReady(function()
     lightBoxVideoHeight:480,
     lightBoxIframeWidth:800,
     lightBoxIframeHeight:600,
-    lightBoxBackgroundColor:"#000000",
+    lightBoxBackgroundColor:"#000",
     lightBoxInfoWindowBackgroundColor:"#FFFFFF",
     lightBoxItemBorderColor1:"#fcfdfd",
     lightBoxItemBorderColor2:"#e4FFe4",
@@ -109,7 +109,7 @@ FWDS3DCovUtils.onReady(function()
     lightBoxBorderSize:0,
     lightBoxBorderRadius:0,
     lightBoxSlideShowDelay:4000
-  });
+    });
 });
 
 function gotoNextCategory()
@@ -119,22 +119,42 @@ function gotoNextCategory()
 
 function gotoNextThumb()
 {
-  coverflow.gotoThumb(coverflow.getCurrentThumbId() + 1);
+  var thumbId = coverflow.getCurrentThumbId();
+
+  if(thumbId === 6)
+  {
+      thumbId = 0;
+  }
+  else thumbId += 1;
+
+  coverflow.gotoThumb(thumbId);
 }
 
 function gotoPrevThumb()
 {
-  coverflow.gotoThumb(coverflow.getCurrentThumbId() - 1);
+  var thumbId = coverflow.getCurrentThumbId();
+
+  if(thumbId === 0)
+  {
+      thumbId = 6;
+  }
+  else thumbId -= 1;
+
+  coverflow.gotoThumb(thumbId);
 }
 
-function startStopSlideshow()
+var start = false;
+var inter;
+
+function playSlide()
 {
-  if (coverflow.isSlideshowPlaying())
+  if(start)
   {
-    coverflow.stopSlideshow();
+    clearInterval(inter);
+    start = false;
   }
-  else
-  {
-    coverflow.startSlideshow();
+  else {
+    inter = setInterval(gotoNextThumb, 3000);
+    start = true;
   }
 }

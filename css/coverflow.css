@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+}
+
+.largeLabel {
+  color: white !important;
+}
+
+#coverflow-buttons {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+#coverflow-buttons button {
+  background-color: black;
+  color: white;
+  border: 1px solid white !important;
+  width: 60px;
+}
