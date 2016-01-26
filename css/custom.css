@@ -134,6 +134,24 @@ nav button {
   border: none;
 }
 
+#patterns button:hover {
+  border: 1px solid blue;
+  box-shadow: 0px 3px 12px blue;
+  border-radius: 10px;
+}
+
+.pattern-line {
+}
+
+.pattern {
+  height: 75px;
+}
+
+button.actived-pattern {
+  border: 1px solid #ED1651;
+  box-shadow: 0px 3px 12px #ED1651;
+  border-radius: 2px;
+}
 /* END TROMBINOSCOPE */
 
 /* PARTNER */
