@@ -18,12 +18,12 @@ $(document).ready(function()
     {
       $('.active').removeClass();
 			var offset = $('body').offset();
-			$('html,body').animate({scrollTop: offset.top}, 1000);
+			$('html,body').animate({scrollTop: offset.top - 100}, 1000);
 		});
 
     $('.navbar-nav li').click(function()
     {
       var href = $('a', this).attr('href');
-      $('html, body').animate({scrollTop: $(href).offset().top - nav_height}, 1000);
+      $('html, body').animate({scrollTop: $(href).offset().top - nav_height + 1}, 1000);
 		});
 });

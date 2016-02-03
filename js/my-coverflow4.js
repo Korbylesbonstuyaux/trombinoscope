@@ -14,7 +14,7 @@ FWDS3DCovUtils.onReady(function()
     skinPath:"skins/3d-coverflow/skin_black",
 
     //main settings
-    backgroundColor:"#000",
+    backgroundColor:"#FFFFFF",
     backgroundImagePath:"",
 		backgroundRepeat:"repeat-x",
 		showDisplay2DAlways:"no",

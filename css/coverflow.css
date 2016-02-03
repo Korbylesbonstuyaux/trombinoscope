@@ -1,9 +1,13 @@
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .largeLabel {
-  color: white !important;
+  color: #EB0081 !important;
+}
+
+.mediaDescriptionHeader {
+  color: #EB0081 !important;
 }
 
 #coverflow-buttons {
@@ -13,8 +17,8 @@ body {
 }
 
 #coverflow-buttons button {
-  background-color: black;
-  color: white;
-  border: 1px solid white !important;
+  background-color: white;
+  color: #EB0081;
+  border: 1px solid #EB0081 !important;
   width: 60px;
 }

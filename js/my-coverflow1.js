@@ -14,11 +14,11 @@ FWDS3DCovUtils.onReady(function()
     skinPath:"skins/3d-coverflow/skin_black",
 
     //main settings
-    backgroundColor:"#000",
+    backgroundColor:"#FFFFFF",
     backgroundImagePath:"",
     backgroundRepeat:"repeat-x",
     showDisplay2DAlways:"no",
-    coverflowStartPosition:"center",
+    coverflowStartPosition:1,
     coverflowTopology:"dualsided",
     coverflowXRotation:0,
     coverflowYRotation:0,
@@ -100,7 +100,7 @@ FWDS3DCovUtils.onReady(function()
     lightBoxIframeWidth:800,
     lightBoxIframeHeight:600,
     lightBoxBackgroundColor:"#000",
-    lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+    lightBoxInfoWindowBackgroundColor:"rgba(255, 255, 255, 0);",
     lightBoxItemBorderColor1:"#fcfdfd",
     lightBoxItemBorderColor2:"#e4FFe4",
     lightBoxItemBackgroundColor:"#333333",
@@ -112,6 +112,8 @@ FWDS3DCovUtils.onReady(function()
     });
 });
 
+var NB_PHOTO = 19;
+
 function gotoNextCategory()
 {
   coverflow.switchCategory(coverflow.getCurrentCategoryId() + 1);
@@ -121,7 +123,7 @@ function gotoNextThumb()
 {
   var thumbId = coverflow.getCurrentThumbId();
 
-  if(thumbId === 6)
+  if(thumbId === NB_PHOTO)
   {
       thumbId = 0;
   }
@@ -136,7 +138,7 @@ function gotoPrevThumb()
 
   if(thumbId === 0)
   {
-      thumbId = 6;
+      thumbId = NB_PHOTO;
   }
   else thumbId -= 1;
 
